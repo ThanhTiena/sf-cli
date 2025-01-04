@@ -1,7 +1,7 @@
 {
   "name": "sf-cli",
   "description": "this is my first salesforce cmd customized",
-  "version": "0.0.0",
+  "version": "24.1.0.4",
   "author": "Tien Nguyen Thanh",
   "bin": {
     "sc": "./bin/run.js"
