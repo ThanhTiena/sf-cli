@@ -7,6 +7,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    with:
+      ENVIRONMENT: Main
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -34,8 +36,8 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}"
           echo "${{ secrets.GH_EMAIL }}"
           echo "${{ secrets.GH_USERNAME }}"
-          git config --global user.email "thanh.tien.nguyen.bd@gmail.com"
-          git config --global user.name "ThanhTiena"
+          git config --global user.email ${{ secrets.GH_EMAIL }}
+          git config --global user.name ${{ secrets.GH_USERNAME }}
       - name: Generate oclif README
         if: ${{ steps.version-check.outputs.skipped == 'false' }}
         id: oclif-readme
