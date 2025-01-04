@@ -3,12 +3,14 @@ name: version, tag and github release
 on:
   push:
     branches: [main]
+  
+  workflow_dispatch:
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    with:
-      ENVIRONMENT: Main
+    environment:
+      name: Main
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
