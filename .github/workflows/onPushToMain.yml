@@ -34,8 +34,8 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}"
           echo "${{ secrets.GH_EMAIL }}"
           echo "${{ secrets.GH_USERNAME }}"
-          git config --global user.email ${{ secrets.GH_EMAIL }}
-          git config --global user.name ${{ secrets.GH_USERNAME }}
+          git config --global user.email "thanh.tien.nguyen.bd@gmail.com"
+          git config --global user.name "ThanhTiena"
       - name: Generate oclif README
         if: ${{ steps.version-check.outputs.skipped == 'false' }}
         id: oclif-readme
